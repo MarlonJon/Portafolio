@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">  
+  <head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap, jQury, Rails" />
+    <meta name="description" content="Perfil personal con proyectos web" />
+    <meta name="author" content="Marlon Jon" />
+    <meta http-equiv="refresh" content="30" />
+    <title>Portafolio</title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  	<%= csrf_meta_tags %>
+  	<!-- Google Font Roboto Link -->
+  	<link href='http://fonts.googleapis.com/css?family=Roboto:500,400italic,100,300,700' rel='stylesheet' type='text/css'>
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+  </head>
+  <body>
+  	<nav class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>                        
+	      </button>
+	      <a class="navbar-brand" href="<%= users_path %>">Portafolio</a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="myNavbar">
+	      <ul class="nav navbar-nav">
+	        <li class="active"><a href="<%= users_path %>">Inicio</a></li>
+	        <li><a href="#">Proyectos</a></li>
+	        <li><a href="#">Contacto</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+	        <li class="dropdown">
+	          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-globe"><span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li class="active"><a href="#"><%= image_tag "banderas/es.gif", :class => "banderas" %>&nbsp;&nbsp;&nbsp;Español</a></li>
+	            <li><a href="#"><%= image_tag "banderas/in.gif", :class => "banderas" %>&nbsp;&nbsp;&nbsp;English</a></li>
+	            <li><a href="#"><%= image_tag "banderas/nl.gif", :class => "banderas" %>&nbsp;&nbsp;&nbsp;Nederlands</a></li>
+	            <li><a href="#"><%= image_tag "banderas/de.gif", :class => "banderas" %>&nbsp;&nbsp;&nbsp;Deutsch</a></li>
+	            <li><a href="#"><%= image_tag "banderas/fr.gif", :class => "banderas" %>&nbsp;&nbsp;&nbsp;Français</a></li>
+	            <li><a href="#"><%= image_tag "banderas/it.gif", :class => "banderas" %>&nbsp;&nbsp;&nbsp;Italiano</a></li>
+	            <li><a href="#"><%= image_tag "banderas/ru.gif", :class => "banderas" %>&nbsp;&nbsp;&nbsp;Pусский</a></li>
+	          </ul>
+	        </li>
+	      </ul>
+        <!-- descomentar cuando este listo
+	      <ul class="nav navbar-nav navbar-right">
+	        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        	<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	      </ul> -->
+	    </div>
+	  </div>
+	</nav>
+    
+    <%= yield %>
+
+    <div class="footer">
+      <div class="container">
+      	<div class="row">
+      		<div class="col-md-4">
+      			<br />
+      			<br />
+      			<address>
+					Web creada por: <a href="mailto:vanderlinden.marlon@gmail.com">Marlon Jon</a>.<br />
+					<br />
+					Espan&#771;a<br />
+					Calle Alicante nº 37<br />
+					03710<br />
+					Calpe - Alicante
+				</address>
+		    </div>
+		    <div class="col-md-4">
+      			<br />
+      			<br />
+      			<ul>
+      				<li><a href="">Proyectos</a></li>
+      				<li><a href="">Contacto</a></li>
+      				<li><a href="">PayPal</a></li>
+      				<li><a href="">Yo y Mi Empresa</a></li>
+      				<li><a href="">Terminos y Condiciones</a></li>
+      				<li><a href="">Politica de Privacidad</a></li>
+      			</ul>
+		    </div>
+		    <div class="col-md-1 col-md-offset-1">
+      			<br />
+      			<br />
+      			<a href="https://www.facebook.com/vanderlinden.marlon" target="_blank"><%= image_tag "redes-sociales/face.png", :class => "logoredes" %></a>
+		    </div>
+		    <div class="col-md-1">
+      			<br />
+      			<br />
+      			<a href="https://es.linkedin.com/pub/marlon-jon-van-der-linden/62/68b/a2b" target="_blank"><%= image_tag "redes-sociales/link.png", :class => "logoredes" %></a>
+		    </div>
+		    <div class="col-md-1">
+      			<br />
+      			<br />
+      			<a href="https://github.com/MarlonJon/Portafolio" target="_blank"><%= image_tag "redes-sociales/git.png", :class => "logoredes" %></a>
+		    </div>    
+		</div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
